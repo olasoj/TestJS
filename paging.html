@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Created By MultiWebPress - www.multiwebpress.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination UI | MultiWebPress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+
+    <style>
+        .pagination {
+            font-size: 24px;
+            position: relative;
+
+            display: table;
+            margin: 0 auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        .pagination-items {
+            list-style-type: none;
+            font-size: 20px;
+            margin: 10px auto;
+            display: table;
+            padding-left: 0;
+        }
+
+        .pagination-footer {
+            list-style-type: none;
+            font-size: 20px;
+            margin: 10px auto;
+            display: table;
+        }
+
+        .pagination-items li {
+            display: inline;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            cursor: pointer;
+        }
+
+        .pagination-items li {
+            display: inline;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            cursor: pointer;
+        }
+
+        /* Style the active/current link */
+        .pagination-items li.active {
+            background-color: dodgerblue;
+            border-radius: 25px;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        /* Add a grey background color on mouse-over */
+        .pagination-items li:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="pagination">
+        <ul class="pagination-items" id="pagination-items">
+            <li>
+                <!-- <button type="button" disabled> -->
+                &laquo;
+                <!-- </button> -->
+            </li>
+            <li class="active" value="2" id="item-2">2</li>
+            <!-- <button type="button" disabled> -->
+            <li>
+                &raquo;
+                <!-- </button> -->
+            </li>
+        </ul>
+
+        <div class="pagination-footer" data-test="pagination-footer-text">
+            <span>Viewing 1 - 10 of 307 Reviews</span>
+        </div>
+    </div>
+</body>
+
+<script>
+    let container = document.getElementById("pagination-items");
+    const two = document.getElementById("item-2");
+
+    console.log(container)
+    console.log(two)
+
+    container.addEventListener("click", function (ev) {
+
+        if (ev.target !== ev.currentTarget) {
+            const two = document.getElementById("item-2");
+            console.log(two.value);
+            ev.stopPropagation();
+            return;
+        }
+        // msg.innerHTML = `${ev.target.text} clicked`;
+        // console.log(`${ev.target.text} clicked`);
+    });
+
+
+</script>
+
+</html>
